@@ -1,0 +1,5 @@
+GRPC localhost:9001/BillingService/CreateBillingAccount
+{"patineId":"123",
+ "name":"Shivam",
+ "email": "shivam@example.com"
+ }
