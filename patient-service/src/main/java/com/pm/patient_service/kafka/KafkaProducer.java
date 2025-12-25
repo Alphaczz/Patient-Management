@@ -28,7 +28,8 @@ public class KafkaProducer {
         try{
             //
             // byte array to keep size small
-            kafkaTemplate.send("patient",event.toByteArray());
+            log.info(" sending Patient Created event:{}",event);
+            kafkaTemplate.send("patient", patient.getId().toString(), event.toByteArray());
 
         }catch (Exception ex){
             log.error("Error sending Patient Created event:{}",event);
