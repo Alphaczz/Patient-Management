@@ -16,10 +16,12 @@ import java.util.Optional;
 public class AuthController {
 
     private final AuthService authService;
-    public  AuthController(AuthService authService) {
+
+    public AuthController(AuthService authService) {
         this.authService = authService;
     }
-       @Operation(summary = "Generate token on user login")
+
+    @Operation(summary = "Generate token on user login")
       @PostMapping("/login")
     public ResponseEntity<LoginResponseDto> login(@RequestBody LoginRequestDto loginRequestDto) {
            Optional<String> tokenOptional =authService.authenticate(loginRequestDto);
