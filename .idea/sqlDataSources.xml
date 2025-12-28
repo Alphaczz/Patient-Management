@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="ceab4a0e-fc04-4ce8-b135-83b86321bf77" name="authdb Mapping">
+      <data-sources db="f2d752ac-3bdf-4105-8275-034283cc8735" />
+      <scope>
+        <node kind="database" qname="db" />
+      </scope>
+    </mapping>
+  </component>
+</project>
