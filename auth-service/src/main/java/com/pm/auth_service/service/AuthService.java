@@ -1,8 +1,7 @@
 package com.pm.auth_service.service;
 
 import com.pm.auth_service.dto.LoginRequestDto;
-import com.pm.auth_service.model.User;
-import com.pm.auth_service.repository.UserRepository;
+
 import com.pm.auth_service.util.JwtUtil;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
