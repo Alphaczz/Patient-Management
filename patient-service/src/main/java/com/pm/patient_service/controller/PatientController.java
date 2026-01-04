@@ -1,5 +1,6 @@
 package com.pm.patient_service.controller;
 
+import com.pm.patient_service.dto.PagedPatientResponseDTO;
 import com.pm.patient_service.dto.PatientRequestDTO;
 import com.pm.patient_service.dto.PatientResponseDTO;
 import com.pm.patient_service.dto.vaildators.CreatePatientValidationGroup;
@@ -27,8 +28,14 @@ public class PatientController {
 
     @GetMapping
     @Operation(summary = "Get Patients")
-    public ResponseEntity<List<PatientResponseDTO>> getAllPatient(){
-            List<PatientResponseDTO> response=patientService.getPatient();
+    public ResponseEntity<PagedPatientResponseDTO> getAllPatient(
+            @RequestParam(defaultValue = "1") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "asc") String sort,
+            @RequestParam(defaultValue = "name") String sortField  ,
+            @RequestParam(defaultValue = "") String searchValue
+    ){
+            PagedPatientResponseDTO response=patientService.getPatient(page,size,sort,sortField,searchValue);
             return ResponseEntity.ok().body(response);
 
     }
