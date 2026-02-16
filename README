@@ -1,0 +1,56 @@
+API Gateway → routes everything
+    ↓
+Auth Service → handles logins
+Patient Service → manages patient data
+Billing Service → deals with money stuff
+Analytics Service → crunches numbers
+
+Tech I'm Using
+
+Spring Boot 3.x - main framework
+Java 17+ - because why not use modern Java
+Spring Cloud Gateway - for the API gateway
+gRPC - fast inter-service communication
+PostgreSQL - main database (MySQL works too)
+JWT - authentication tokens
+Maven - dependency management
+Docker - containerization
+
+Running Without Docker
+If you don't want to use Docker:
+bash# Start each service in separate terminals
+cd auth-service && mvn spring-boot:run
+cd patient-service && mvn spring-boot:run
+cd billing-service && mvn spring-boot:run
+cd analytics-service && mvn spring-boot:run
+cd api-gateway && mvn spring-boot:run
+
+Configuration
+Create a .env file for each service. Here's what you need:
+propertiesDB_HOST=localhost
+DB_PORT=5432
+DB_NAME=patient_management
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+
+JWT_SECRET=make_this_something_secure
+JWT_EXPIRATION=86400000
+
+# Ports for each service
+AUTH_SERVICE_PORT=8081
+PATIENT_SERVICE_PORT=8082
+BILLING_SERVICE_PORT=8083
+ANALYTICS_SERVICE_PORT=8084
+API_GATEWAY_PORT=8080
+
+
+Project Layout
+Patient-Management/
+├── api-gateway/          → Gateway service
+├── auth-service/         → Authentication
+├── patient-service/      → Patient management
+├── billing-service/      → Billing and payments
+├── analytics-service/    → Analytics and reports
+├── infrastructure/       → Docker stuff
+├── integration-tests/    → Test suite
+└── api-requests/         → Sample API calls
