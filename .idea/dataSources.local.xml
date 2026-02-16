@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="IU-253.29346.138">
+  <component name="dataSourceStorageLocal" created-in="IU-253.30387.90">
     <data-source name="db@localhost" uuid="071c6b01-74f1-49f8-b581-2e03e2eabeb4">
       <database-info product="PostgreSQL" version="18.0 (Debian 18.0-1.pgdg13+3)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.7.3" dbms="POSTGRES" exact-version="18.0" exact-driver-version="42.7">
         <identifier-quote-string>&quot;</identifier-quote-string>
@@ -17,9 +17,7 @@
       </schema-mapping>
     </data-source>
     <data-source name="redis" uuid="641d4ce9-9a72-49f0-a2f6-0a8b10e1f41c">
-      <database-info product="Redis Standalone" version="8.4.0" jdbc-version="4.2" driver-name="Redis JDBC Driver" driver-version="1.5" dbms="REDIS" exact-version="8.4.0" exact-driver-version="1.5">
-        <jdbc-catalog-is-schema>true</jdbc-catalog-is-schema>
-      </database-info>
+      <database-info product="Redis Standalone" version="8.4.0" jdbc-version="4.2" driver-name="Redis JDBC Driver" driver-version="1.5" dbms="REDIS" exact-version="8.4.0" exact-driver-version="1.5" />
       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <secret-storage>master_key</secret-storage>
       <auth-provider>no-auth</auth-provider>

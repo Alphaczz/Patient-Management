@@ -1,5 +1,6 @@
 package com.pm.patient_service.kafka;
 
+import billing.events.BillingAccountEvent;
 import com.pm.patient_service.model.Patient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,6 +34,20 @@ public class KafkaProducer {
 
         }catch (Exception ex){
             log.error("Error sending Patient Created event:{}",event);
+        }
+
+
+    }
+
+    public void sendBillingAcountEvent(String patientId, String name, String email) {
+        BillingAccountEvent event = BillingAccountEvent.newBuilder()
+                .setPatientId(patientId).setName(name).setEmail(email).setEventType("BILLING_ACCOUNT_CREATED_REQUESTED")
+                .build();
+        try{
+            kafkaTemplate.send("billing-account", event.toByteArray());
+            log.info(" sending Billing Account Created event:{}",event);
+        }catch (Exception ex){
+            log.error("Error sending Billing Account Created event:{}",ex.getMessage());
         }
 
 
